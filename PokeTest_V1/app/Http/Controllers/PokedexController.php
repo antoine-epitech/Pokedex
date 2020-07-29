@@ -14,7 +14,7 @@ class PokedexController extends Controller
     {
         $this->middleware('auth')->except('app', 'index');
     }
-  
+
     /**
      * Display a listing of the resource.
      *
@@ -26,7 +26,7 @@ class PokedexController extends Controller
         ->join('types', 'types.id_pok', '=', 'pokedex.id_pok')
         ->get();
 
-        var_dump($pokedex[0]);
+        //var_dump($pokedex[0]);
         return response()->json($pokedex);
     }
 

@@ -33,5 +33,9 @@ Route::get('/users/{id}/team/send', 'UsersController@getSendTeam')->middleware('
 
 
 Route::resource('pokemons', 'PokedexController', ['only' => [
-    'index', 
+    'index',
 ]]);
+
+Auth::routes();
+
+Route::get('/home', 'HomeController@index')->name('home');
